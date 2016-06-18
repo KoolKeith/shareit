@@ -14,6 +14,7 @@ FIXME It works for one file only currently...
  * Resize it to max 1920x1080 or any other configured value; can be disabled via config or via command line option.
  * Remove all metadata; can be disabled via config or via command line option.
  * Optimize the file; can be disabled via config or via command line option.
+
 ###If file is CR2 or ARW raw image
  * Extract the thumbnail image (mostly jpg) from the raw image and use that to upload; then proceed as above (for a jpeg file).
  * Automatically rotate the resulting jpeg file if needed to preserve the rotation.
