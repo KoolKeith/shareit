@@ -1,6 +1,8 @@
 #Shareit
 A bash script to "optimize" files and upload them to your/a server via scp.
 
+FIXME It works for one file only currently...
+
 ##What does it do?
  * It uploads files to your server.
  * Then it copies the public URL into your clipboard.

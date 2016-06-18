@@ -93,7 +93,9 @@ shift $((OPTIND-1))
 #########################
 _tmp_dir=$(mktemp -d "/tmp/shareit.XXXXXX")
 
+_counter=0
 while [ $# -ne 0 ]; do
+  _counter=$((_counter+1))
   _originalfile="${1}"
   if [[ ! -f "${_originalfile}" ]]; then
     echo "ERROR: File \"${_originalfile}\" does not exist, ignoring this one."
