@@ -1,0 +1,12 @@
+[Desktop Entry]
+ServiceTypes=KonqPopupMenu/Plugin
+Type=Service
+Actions=sharefile;
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/octet-stream;
+X-KDE-Submenu=FileSharing
+
+[Desktop Action sharefile]
+Name=Share this file(s) on your server
+Icon=
+Exec=xterm -geometry 190x10 -e /path/to/shareit.sh %U
