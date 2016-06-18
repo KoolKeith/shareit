@@ -5,6 +5,7 @@ A bash script to "optimize" files and upload them to your/a server via scp.
  * It uploads files to your server.
  * Then it copies the public URL into your clipboard.
  * There is a .desktop file included so that you can add a context menu entry to share files within Dolphin file manager (KDE). Adapt the path to your shareit.sh script in that desktop file and place it in ~/.local/share/kservices5/ServiceMenus/. See https://wiki.natenom.com/w/Linux/KDE/Service_Menu for details.
+ * There is a history for shared files in the format "local url => remote url".
 
 ##In some cases it does some extra work
 ###If file is a png or jpeg
