@@ -18,12 +18,16 @@ FIXME It works for one file only currently...
  * Extract the thumbnail image (mostly jpg) from the raw image and use that to upload; then proceed as above (for a jpeg file).
  * Automatically rotate the resulting jpeg file if needed to preserve the rotation.
 
+##Help
+Try shareit.sh --help
+ 
 ##Example
 > INFO: Image resized.
 > INFO: Metadata removed.
 > INFO: Image optimized.
-> tmpfile.p6qLay                                                                                                                                              100%  351KB 351.3KB/s   00:00    
+> tmpfile.p6qLay                           100%  351KB 351.3KB/s   00:00    
 > INFO: Local URL: "/home/data/images/filebla.JPG"
+
 > INFO: Remote URL: https://yourdomain.tld/sharing/caa76a06bcd2f26fea8a44af4afd6b4d223fe5321e31bn083dd7ecb33f995766.JPG
 > Press Enter to quit...
 
