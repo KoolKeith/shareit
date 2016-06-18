@@ -1,7 +1,11 @@
 #!/bin/bash
 
+function print_help() {
+  echo -en >&2 "Usage: $0 [option(s)] file1 [file2] [file...]\n-z Create a zip archive for file(s).\n-n Do not image_optimize file(s).\n-m Preserve metadata.\n-c Do not convert file(s).\n-r Do not resize the image(s) if larger than ${DEF_IMGMAXSIZE}.\n-d Print debug messages (set -x).\n-l Print the last ${DEF_LISTHISTNO} shared files.\n"
+}
+
 if [ "${1}" == "" ]; then
-  echo "I need an option or a filename... Dummerkopfkind :P"
+  print_help
   exit 255
 fi
 
@@ -80,7 +84,7 @@ do
       set -x
     ;;
     h)
-      echo -en >&2 "Usage: $0 [option(s)] file1 [file2] [file...]\n-z Create a zip archive for file(s).\n-n Do not image_optimize file(s).\n-m Preserve metadata.\n-c Do not convert file(s).\n-r Do not resize the image(s) if larger than ${DEF_IMGMAXSIZE}.\n-d Print debug messages (set -x).\n-l Print the last ${DEF_LISTHISTNO} shared files.\n"
+      print_help
       exit 1
     ;;
   esac
