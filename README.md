@@ -6,19 +6,33 @@ FIXME It works for one file only currently...
 ##What does it do?
  * It uploads files to your server.
  * Then it copies the public URL into your clipboard.
- * There is a .desktop file included so that you can add a context menu entry to share files within Dolphin file manager (KDE). Adapt the path to your shareit.sh script in that desktop file and place it in ~/.local/share/kservices5/ServiceMenus/. See https://wiki.natenom.com/w/Linux/KDE/Service_Menu for details.
  * There is a history for shared files in the format "local url => remote url".
-
-##In some cases it does some extra work
-###If file is a png or jpeg
+ 
+###In some cases it does some extra work
+####If file is a png or jpeg
  * Resize it to max 1920x1080 or any other configured value; can be disabled via config or via command line option.
  * Remove all metadata; can be disabled via config or via command line option.
  * Optimize the file; can be disabled via config or via command line option.
 
-###If file is CR2 or ARW raw image
+####If file is CR2 or ARW raw image
  * Extract the thumbnail image (mostly jpg) from the raw image and use that to upload; then proceed as above (for a jpeg file).
  * Automatically rotate the resulting jpeg file if needed to preserve the rotation.
 
+##Installation
+###Script only
+Download it and set permissions accordingly :)
+
+###Context menu entry for Dolphin file manager (KDE/Plasma)
+There is a .desktop file included so that you can add a context menu entry to share files within Dolphin file manager (KDE).
+
+Adapt the path to your shareit.sh script in that desktop file and place it within ~/.local/share/kservices5/ServiceMenus/.
+
+Of course you need also to "install" the script, see above.
+
+See https://wiki.natenom.com/w/Linux/KDE/Service_Menu for details.
+
+
+ 
 ##Help
 Try shareit.sh --help
  
