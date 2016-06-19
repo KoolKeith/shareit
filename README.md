@@ -1,4 +1,4 @@
-#Shareit
+#ShareIt
 A bash script to "optimize" files and upload them to your/a server via scp.
 
 FIXME It works for one file only currently...
