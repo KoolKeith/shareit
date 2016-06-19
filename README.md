@@ -1,12 +1,11 @@
 #ShareIt
 A bash script to "optimize" files and upload them to your/a server via scp.
 
-FIXME It works for one file only currently...
-
 ##What does it do?
  * It uploads files to your server.
  * Then it copies the public URL into your clipboard.
  * There is a history for shared files in the format "local url => remote url".
+ * If you select more than one file to share, the files are processed one by one.
  
 ###In some cases it does some extra work
 ####If file is a png or jpeg
