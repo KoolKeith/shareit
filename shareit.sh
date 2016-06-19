@@ -163,30 +163,35 @@ while [ $# -ne 0 ]; do
   [ "${DO_RESIZE}" == "true" ] && image_resize "${_tmp_file}" "${_tmp_file}" && echo "INFO: Image resized."
   [ "${DO_REMOVEMETADATA}" == "true" ] && image_remove_metadata "${_tmp_file}" && echo "INFO: Metadata removed."
   [ "${DO_OPTIMIZE}" == "true" ] && image_optimize "${_tmp_file}" "${_suffix}" && echo "INFO: Image optimized."
+
+  
+  # Prepare file, upload it ... cleanup later.
+  chmod a+r "${_tmp_file}"
+  _checksum=$(sha256sum "${_tmp_file}" | cut -d' ' -f1)
+
+  # Upload to the server.
+  scp -P "${_remote_port}" "${_tmp_file}" "${_remote_user}"@"${_remote_host}":"${_remote_destdir}"/"${_checksum}"."${_suffix}"
+
+  # Clean up
+  rm "${_tmp_file}"
+
+  _public_url="${_remote_public_http}${_checksum}.${_suffix}"
+
+  # Write to history file for later ...
+  echo "\"${_originalfile}\" => \"${_public_url}\"" >> "${_history_file}"
+
+  # Copy URL to clipboard.
+  echo -en "${_public_url}" | xsel -b
+
+  # Finished; let the user know the public URL for the shared file.
+  _msgtext="INFO: Local URL: \"${_originalfile}\"\nINFO: Remote URL: ${_public_url}\nPress Enter to quit..."
+  echo -en "${_msgtext}"
+
+  # Wait until user presses enter.
+  read _a
+
   shift
 done
 
-chmod a+r "${_tmp_file}"
-_checksum=$(sha256sum "${_tmp_file}" | cut -d' ' -f1)
-
-# Upload to the server.
-scp -P "${_remote_port}" "${_tmp_file}" "${_remote_user}"@"${_remote_host}":"${_remote_destdir}"/"${_checksum}"."${_suffix}"
-
-# Clean up
-rm "${_tmp_file}"
 rmdir "${_tmp_dir}"
 
-_public_url="${_remote_public_http}${_checksum}.${_suffix}"
-
-# Write to history file for later ...
-echo "\"${_originalfile}\" => \"${_public_url}\"" >> "${_history_file}"
-
-# Copy URL to clipboard.
-echo -en "${_public_url}" | xsel -b
-
-# Finished; let the user know the public URL for the shared file.
-_msgtext="INFO: Local URL: \"${_originalfile}\"\nINFO: Remote URL: ${_public_url}\nPress Enter to quit..."
-echo -en "${_msgtext}"
-
-# Wait until user presses enter.
-read _a
