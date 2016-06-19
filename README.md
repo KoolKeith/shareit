@@ -30,8 +30,6 @@ Adapt the path to your shareit.sh script in that desktop file and place it withi
 Of course you need also to "install" the script, see above.
 
 See https://wiki.natenom.com/w/Linux/KDE/Service_Menu for details.
-
-
  
 ##Help
 Try shareit.sh --help
@@ -40,10 +38,13 @@ Try shareit.sh --help
 > INFO: Image resized.
 > INFO: Metadata removed.
 > INFO: Image optimized.
-> tmpfile.p6qLay                           100%  351KB 351.3KB/s   00:00    
+
+> tmpfile.p6qLay                           100%  351KB 351.3KB/s   00:00
+
 > INFO: Local URL: "/home/data/images/filebla.JPG"
 
 > INFO: Remote URL: https://yourdomain.tld/sharing/caa76a06bcd2f26fea8a44af4afd6b4d223fe5321e31bn083dd7ecb33f995766.JPG
+
 > Press Enter to quit...
 
 ##Dependencies
